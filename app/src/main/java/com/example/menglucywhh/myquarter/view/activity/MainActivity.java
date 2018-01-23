@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
         ThemeManager.registerThemeChangeListener(this);
         supportActionBar = getSupportActionBar();
 
+
+        //zhang
         //new出SlidingMenu对象
         menu = new SlidingMenu(this);
         //设置侧滑的方向.左侧
