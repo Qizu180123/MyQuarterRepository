@@ -7,7 +7,6 @@
       <module fileurl="file://E:\Studio3_WorkSpace\MyQuarter\MyQuarterRepository.iml" filepath="E:\Studio3_WorkSpace\MyQuarter\MyQuarterRepository.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
-      <module fileurl="file://E:\studio-gc\MyQuarterRepository\library\library.iml" filepath="E:\studio-gc\MyQuarterRepository\library\library.iml" />
     </modules>
   </component>
 </project>
