@@ -9,7 +9,6 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-
     <style name="tablayout_ziti">
         <item name="android:textSize">21sp</item>
     </style>
