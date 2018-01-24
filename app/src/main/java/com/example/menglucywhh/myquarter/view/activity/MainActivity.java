@@ -218,7 +218,6 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
             }
         });
 
-
         //仿iphone开关的监听,选中时 未选中时候
         switchButton.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
             @Override
