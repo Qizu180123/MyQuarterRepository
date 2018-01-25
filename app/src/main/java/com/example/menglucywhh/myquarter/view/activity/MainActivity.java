@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
     RadioButton radioRecommend;
     @BindView(R.id.radio_smile)
     RadioButton radioSmile;
+
     @BindView(R.id.radio_video)
     RadioButton radioVideo;
     @BindView(R.id.radio_group)
