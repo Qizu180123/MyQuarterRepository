@@ -74,6 +74,8 @@ public class RecommendFragment extends Fragment {
         });
         //设置viewpager和Xtablayout联动
         xTablayout.setupWithViewPager(viewPager);*/
+        recyclerview.setFocusable(true);
+
         recyclerview.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         //适配器对象
         RecommendRecyAdapter recommendRecyAdapter = new RecommendRecyAdapter(getActivity(), getChildFragmentManager());

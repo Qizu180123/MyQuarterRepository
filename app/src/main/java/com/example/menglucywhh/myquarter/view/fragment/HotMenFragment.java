@@ -1,31 +1,115 @@
 package com.example.menglucywhh.myquarter.view.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.menglucywhh.myquarter.R;
+import com.example.menglucywhh.myquarter.adapter.HotAdapter;
+import com.example.menglucywhh.myquarter.bean.AdBean;
+import com.example.menglucywhh.myquarter.bean.HotVideosBean;
+import com.example.menglucywhh.myquarter.presenter.AdPresenter;
+import com.example.menglucywhh.myquarter.presenter.HotVideosPresenter;
+import com.example.menglucywhh.myquarter.view.IView.AdView;
+import com.example.menglucywhh.myquarter.view.IView.HotVideosView;
+import com.youth.banner.Banner;
+import com.youth.banner.loader.ImageLoader;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by Menglucywhh on 2018/1/20.
  */
 
-public class HotMenFragment extends Fragment {
+public class HotMenFragment extends Fragment implements AdView, HotVideosView {
+
+    @BindView(R.id.banner)
+    Banner banner;
+    Unbinder unbinder;
+    @BindView(R.id.recyclerview)
+    RecyclerView recyclerview;
+    private HotAdapter hotAdapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       View view = inflater.inflate(R.layout.fragment_hotmen,container,false);
+        View view = inflater.inflate(R.layout.fragment_hotmen, container, false);
 
+        unbinder = ButterKnife.bind(this, view);
         return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        
+        //广告轮播
+        AdPresenter adPresenter = new AdPresenter(this);
+        adPresenter.ad();
+        //热门recy
+        HotVideosPresenter hotVideosPresenter = new HotVideosPresenter(this);
+        hotVideosPresenter.HotVideos();
+        recyclerview.setFocusable(false);
+        hotAdapter = new HotAdapter(getActivity());
+        recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerview.setAdapter(hotAdapter);
+
+
+    }
+
+    @Override
+    public void success(AdBean bean) {
+        //设置图片加载器
+        banner.setImageLoader(new GlideImageLoader());
+        //设置图片集合
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < bean.getData().size(); i++) {
+            String icon = bean.getData().get(i).getIcon();
+            list.add(icon);
+        }
+        banner.setImages(list);
+        //banner设置方法全部调用完毕时最后调用
+        banner.start();
+        //Toast.makeText(getActivity(), bean.getData().get(1).getTitle(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void success(HotVideosBean bean) {
+        Toast.makeText(getActivity(), bean.getMsg(), Toast.LENGTH_SHORT).show();
+        hotAdapter.addData(bean);
+        hotAdapter.addDatauser(bean);
+
+    }
+
+    @Override
+    public void failrue() {
+
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
+
+    private class GlideImageLoader extends ImageLoader {
+        @Override
+        public void displayImage(Context context, Object path, ImageView imageView) {
+            //Glide 加载图片简单用法
+            Glide.with(context).load(path).into(imageView);
+        }
     }
 }
