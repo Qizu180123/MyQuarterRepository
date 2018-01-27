@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<com.facebook.drawee.view.SimpleDraweeView
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:id="@+id/sdv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/img"/>
+    <ImageView
+        android:id="@+id/image"
+        android:layout_alignParentBottom="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/bofang"/>
+    <TextView
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="32dp"
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01:02"/>
+    <ImageView
+        android:id="@+id/image01"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="12dp"
+        android:src="@drawable/pinglun"/>
+    <TextView
+        android:textColor="#ffffff"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="32dp"
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22"/>
+</RelativeLayout>
