@@ -88,7 +88,7 @@ public class HotMenFragment extends Fragment implements AdView, HotVideosView {
 
     @Override
     public void success(HotVideosBean bean) {
-        Toast.makeText(getActivity(), bean.getMsg(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), bean.getMsg(), Toast.LENGTH_SHORT).show();
         hotAdapter.addData(bean);
         hotAdapter.addDatauser(bean);
 

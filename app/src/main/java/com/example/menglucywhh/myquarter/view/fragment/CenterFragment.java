@@ -58,8 +58,7 @@ public class CenterFragment extends Fragment {
                 if (position == 0) {
                     fragment = new HotMenFragment();//热门的fragment
                 } else {
-                    //fragment = new AttentionFragment();//关注的fragment
-                    fragment = new HotMenFragment();
+                    fragment = new AttentionFragment();//关注的fragment
                 }
                 return fragment;
             }

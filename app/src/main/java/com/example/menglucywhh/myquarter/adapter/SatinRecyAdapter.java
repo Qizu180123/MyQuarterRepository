@@ -19,7 +19,7 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
  * Created by Menglucywhh on 2018/1/22.
  */
 
-public class RecommendRecyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class SatinRecyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     Context context;
     FragmentManager childFragmentManager;
 
@@ -32,7 +32,7 @@ public class RecommendRecyAdapter extends RecyclerView.Adapter<RecyclerView.View
     private TextView myDirectory;
     private TextView settings;
 
-    public RecommendRecyAdapter(Context context, FragmentManager childFragmentManager) {
+    public SatinRecyAdapter(Context context, FragmentManager childFragmentManager) {
         this.childFragmentManager = childFragmentManager;
         this.context = context;
     }
@@ -40,7 +40,7 @@ public class RecommendRecyAdapter extends RecyclerView.Adapter<RecyclerView.View
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == 1) {
-            View view = View.inflate(context, R.layout.item_titletop, null);//第一个布局
+            View view = View.inflate(context, R.layout.item_satintitletop, null);//第一个布局
             //View view = LayoutInflater.from(context).inflate(R.layout.item_titletop, null);
             parent.addView(view);
             return new OneViewHolder(view);//返回第一个布局
@@ -69,7 +69,7 @@ public class RecommendRecyAdapter extends RecyclerView.Adapter<RecyclerView.View
            });
 
         } else if (holder instanceof IViewHolder) {
-            childFragmentManager.beginTransaction().replace(R.id.item_rela, new CenterFragment()).commit();
+            childFragmentManager.beginTransaction().replace(R.id.item_rela, new SatinFragment()).commit();
         }
 
     }
