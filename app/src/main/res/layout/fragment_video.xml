@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <RelativeLayout
         android:id="@+id/aaa"
         android:background="#03A9F4"
@@ -29,7 +31,7 @@
             android:textSize="24sp"
             android:textColor="#fff"
             android:layout_centerInParent="true"
-            android:text="推荐"
+            android:text="视频"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -41,38 +43,23 @@
             android:layout_width="35dp"
             android:layout_height="35dp" />
     </RelativeLayout>
-    <RadioGroup
-        android:layout_below="@+id/aaa"
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/mine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="52dp"
+    <com.androidkun.xtablayout.XTabLayout
+        android:id="@+id/xTablayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:xTabIndicatorColor="#03A9F4"
+        app:xTabIndicatorHeight="5dp"
+        app:xTabIndicatorWidth="100dp"
+        app:xTabMaxWidth="480dp"
+        app:xTabMinWidth="240dp"
+        app:xTabMode="scrollable"
+        app:xTabSelectedTextColor="#03A9F4"
+        app:xTabTextColor="#555555"
+        app:xTabTextSize="21sp" />
 
-            android:layout_marginTop="20dp"
-            android:button="@null"
-            android:checked="true"
-            android:text="热门"
-            android:textColor="@drawable/selector"
-            android:textSize="30dp" />
-
-        <RadioButton
-           android:layout_marginLeft="380dp"
-            android:id="@+id/news"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:button="@null"
-            android:text="附近"
-            android:textColor="@drawable/selector"
-            android:textSize="30dp" />
-    </RadioGroup>
 
 
     <com.example.menglucywhh.myquarter.utils.CustomViewPager
@@ -80,5 +67,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/group"></com.example.menglucywhh.myquarter.utils.CustomViewPager>
-</RelativeLayout>
+        android:layout_below="@+id/xTablayout"></com.example.menglucywhh.myquarter.utils.CustomViewPager>
+</LinearLayout>
