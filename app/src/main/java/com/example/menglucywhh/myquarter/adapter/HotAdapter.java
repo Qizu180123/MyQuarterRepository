@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.example.menglucywhh.myquarter.R;
 import com.example.menglucywhh.myquarter.bean.HotVideosBean;
 import com.example.menglucywhh.myquarter.utils.GlideCircleTransform;
+import com.example.menglucywhh.myquarter.utils.ShareUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +55,7 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(HotAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(HotAdapter.ViewHolder holder, final int position) {
         holder.text01.setText(bean.getData().get(position).getUser().getNickname());
         holder.text02.setText(list.get(position).getCreateTime());
         Glide.with(context)
@@ -64,7 +65,12 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder> {
                 , JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "嫂子闭眼睛");
         Glide.with(context).load(list.get(position).getCover())
                 .into(holder.videoplayer.thumbImageView);
-
+        holder.image_fenxiang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ShareUtil.showShare(context,list.get(position).getVideoUrl());
+            }
+        });
     }
 
     @Override
@@ -87,10 +93,12 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder> {
         TextView text04;
         @BindView(R.id.text_05)
         TextView text05;
-
+        @BindView(R.id.image_fenxiang)
+        ImageView image_fenxiang;
         ViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
         }
     }
+
 }
