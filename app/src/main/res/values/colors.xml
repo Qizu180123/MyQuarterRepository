@@ -25,4 +25,10 @@
     <color name="edit_vedio_view">#E0E0E0</color>
     <color name="edit_vedio_viewview">#9CCC65</color>
     <color name="edit_vedio_paizhaoview">#A2DEFA</color>
+
+    <color name="pre_view_bg">#E0E0E0</color>
+    <color name="pre_lj_bg">#C3E8FA</color>
+    <color name="pre_lj_view">#29B6F6</color>
+    <color name="pre_recycle_relative">#A2DEFA</color>
+    <color name="pre_bt_next">#29B6F6</color>
 </resources>
