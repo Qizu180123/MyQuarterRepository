@@ -35,11 +35,11 @@
 
         <ImageView
             android:id="@+id/edit"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/edit"
             android:layout_width="35dp"
-            android:layout_height="35dp" />
+            android:layout_height="35dp"
+            android:layout_alignBottom="@+id/top_text"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/edit" />
     </RelativeLayout>
 
 </LinearLayout>

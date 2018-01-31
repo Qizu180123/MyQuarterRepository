@@ -1,6 +1,7 @@
 package com.example.menglucywhh.myquarter.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.menglucywhh.myquarter.MainActivity;
 import com.example.menglucywhh.myquarter.R;
+import com.example.menglucywhh.myquarter.view.activity.EditActivity;
 import com.example.menglucywhh.myquarter.view.fragment.CenterFragment;
 import com.example.menglucywhh.myquarter.view.fragment.SatinFragment;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -65,6 +67,14 @@ public class RecommendRecyAdapter extends RecyclerView.Adapter<RecyclerView.View
                    }
               //
                    MainActivity.touClick();
+               }
+           });
+
+           oneViewHolder.edit.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   context.startActivity(new Intent(context,EditActivity.class));
+
                }
            });
 

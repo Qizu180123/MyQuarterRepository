@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
     LinearLayout linearlayout;
     @BindView(R.id.sliding_linear)
     LinearLayout slidingLinear;
-    private FragmentManager manager;
+    private static FragmentManager manager;
 
     //默认日间模式
     private int theme = R.style.AppTheme;
@@ -286,4 +286,6 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
             window.setStatusBarColor(getResources().getColor(ThemeManager.getCurrentThemeRes(MainActivity.this, R.color.colorPrimary)));
         }
     }
+
+
 }

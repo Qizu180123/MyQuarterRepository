@@ -15,4 +15,7 @@
 
     <color name="radio_unselect">#BFBFBF</color>
     <color name="radio_select">#03A9F4</color>
+    <color name="vedio_color">#8DA1F0</color>
+    <color name="vedio_viewcolor">#A2DEFA</color>
+
 </resources>

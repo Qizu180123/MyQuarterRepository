@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.menglucywhh.myquarter.view.activity.EditVedioActivity">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/vediogif"
+        android:layout_width="match_parent"
+        android:layout_height="680dp"
+        app:placeholderImage="@mipmap/ic_launcher" />
+
+    <View
+        android:layout_below="@+id/vedio_title"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginTop="5dp"/>
+
+    <RelativeLayout
+        android:id="@+id/vedio_title"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/talk_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/back"
+            android:textColor="@color/backgroundColor"
+            android:textSize="22sp"/>
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="#fff"
+            android:layout_centerInParent="true"
+            android:text="@string/vedio_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/paizhao"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_above="@+id/vedio_recycle"
+        android:layout_width="400dp"
+        android:layout_height="10dp"
+        android:background="#9CCC65" />
+    
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/vediogif"
+        android:id="@+id/vedio_recycle"
+        android:layout_width="match_parent"
+        android:background="@color/vedio_color"
+        android:layout_height="85dp"></android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_below="@+id/vedio_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/vedio_viewcolor">
+
+        <ImageView
+            android:id="@+id/paizhao"
+            android:layout_width="136dp"
+            android:layout_height="136dp"
+            android:src="@drawable/vediopaizhao"
+            android:layout_centerInParent="true"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -48,4 +48,6 @@ dependencies {
     compile 'cn.jzvd:jiaozivideoplayer:6.0.0'
     compile 'fm.jiecao:jiecaovideoplayer:5.5.2'
     implementation files('libs/MobCommons-2017.1201.1507.jar')
+    compile 'com.facebook.fresco:animated-gif:0.14.1'
+
 }
