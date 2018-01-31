@@ -12,9 +12,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.androidkun.xtablayout.XTabLayout;
-import com.example.menglucywhh.myquarter.MainActivity;
 import com.example.menglucywhh.myquarter.R;
 import com.example.menglucywhh.myquarter.utils.CustomViewPager;
+import com.example.menglucywhh.myquarter.view.activity.MainActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.ArrayList;

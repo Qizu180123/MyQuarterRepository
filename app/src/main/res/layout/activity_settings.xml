@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBEBEB"
+    android:orientation="vertical"
+    android:id="@+id/settings_linear"
+    tools:context="com.example.menglucywhh.myquarter.view.activity.SettingsActivity">
+
+    <RelativeLayout
+        android:id="@+id/settings_title"
+        android:background="#03A9F4"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        >
+
+        <TextView
+            android:paddingTop="17dp"
+            android:id="@+id/fanhui"
+            android:textSize="22sp"
+            android:textColor="#fff"
+            android:text="返回"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:paddingTop="17dp"
+            android:textSize="22sp"
+            android:textColor="#fff"
+            android:text="设置"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/settings_jianchaline"
+        android:paddingRight="15dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/jiancha_gengxin"
+            android:textSize="18sp"
+            android:textColor="#999999"
+            android:text="检查更新"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/jiancha_right"
+            android:layout_alignParentRight="true"
+            android:textSize="18sp"
+            android:textColor="#999999"
+            android:text="0.1.1       "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginLeft="40dp"
+        android:background="#DBDBDB"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <RelativeLayout
+        android:id="@+id/settings_yijianline"
+        android:paddingRight="15dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/yijian_fankui"
+            android:textSize="18sp"
+            android:textColor="#999999"
+            android:text="意见反馈"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/yijian_right"
+            android:layout_alignParentRight="true"
+            android:textSize="18sp"
+            android:textColor="#999999"
+            android:text="       "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/settings_guanyuline"
+        android:paddingRight="15dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/guanyu_yikezhong"
+            android:textSize="18sp"
+            android:textColor="#999999"
+            android:text="关于一刻钟"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/guanyu_right"
+            android:layout_alignParentRight="true"
+            android:textSize="18sp"
+            android:textColor="#999999"
+            android:text="       "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginLeft="40dp"
+        android:background="#DBDBDB"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <RelativeLayout
+        android:id="@+id/settings_qingchuline"
+        android:paddingRight="15dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/qingchu_huancun"
+            android:textSize="18sp"
+            android:textColor="#999999"
+            android:text="清除缓存"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/qingchu_right"
+            android:layout_alignParentRight="true"
+            android:textSize="18sp"
+            android:textColor="#999999"
+            android:text="128M       "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/settings_tuichubutton"
+        android:background="@drawable/button_shape"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:text="退出登录"
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
+</LinearLayout>

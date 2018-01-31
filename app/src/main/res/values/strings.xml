@@ -6,4 +6,17 @@
     <string name="share">分享的标题</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edit_title">创作</string>
+    <string name="back">取消</string>
+    <string name="edit_talktitle">发表文章</string>
+    <string name="edit_talkpublish">发表</string>
+    <string name="talk_hint">请输入内容,禁止输入色情,暴力等违反国家法律的内容,违者将以封号处理!</string>
+    <string name="pop_title">是否保存到草稿箱</string>
+    <string name="pop_save">保存</string>
+    <string name="pop_unsave">不保存</string>
+    <string name="vedio_title">拍照</string>
+    <string name="preview_save">存到本地</string>
+    <string name="preview_title">预览</string>
+    <string name="preview_lvjing">滤镜</string>
+    <string name="preview_btnext">下一步</string>
 </resources>

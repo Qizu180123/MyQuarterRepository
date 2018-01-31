@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.menglucywhh.myquarter.view.activity.PreviewActivity">
+
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/previewgif"
+        android:layout_width="match_parent"
+        android:layout_height="640dp"
+        app:placeholderImage="@mipmap/ic_launcher" />
+
+    <View
+        android:layout_below="@+id/preview_title"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginTop="5dp"/>
+
+    <RelativeLayout
+        android:id="@+id/preview_title"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/preview_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/back"
+            android:textColor="@color/backgroundColor"
+            android:textSize="22sp"/>
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="#fff"
+            android:layout_centerInParent="true"
+            android:text="@string/preview_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/preview_save"
+            android:textColor="@color/backgroundColor"
+            android:textSize="22sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/previewljview"
+        android:layout_below="@+id/previewgif"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="#C3E8FA">
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/preview_lvjing"
+            android:textSize="27sp"
+            android:layout_centerVertical="true"/>
+
+        <View
+            android:layout_marginLeft="18dp"
+            android:layout_width="80dp"
+            android:layout_height="10dp"
+            android:background="#29B6F6"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_below="@+id/previewljview"
+        android:layout_width="match_parent"
+        android:layout_height="294dp"
+        android:background="#A2DEFA">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/preview_recycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/preview_bt_next"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="#29B6F6"
+        android:text="@string/preview_btnext"
+        android:textColor="@color/backgroundColor"
+        android:textSize="22sp"/>
+
+
+
+</RelativeLayout>

@@ -10,9 +10,15 @@
     <color name="textColor_night">#FFFFFF</color>
     <color name="backgroundColor">#FFFFFF</color>
     <color name="backgroundColor_night">#3b3b3b</color>
+
     <color name="normal">#BFBFBF</color>
     <color name="selected">#03A9F4</color>
 
+    <color name="vedio_color">#739ece</color>
+    <color name="vedio_viewcolor">#ff0</color>
+
+    <color name="radio_unselect_message">#101010</color>
     <color name="radio_unselect">#BFBFBF</color>
     <color name="radio_select">#03A9F4</color>
+    <color name="sliding_top">#EAAEF1</color>
 </resources>

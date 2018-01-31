@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.menglucywhh.myquarter.MainActivity;
 import com.example.menglucywhh.myquarter.R;
+import com.example.menglucywhh.myquarter.view.activity.MainActivity;
 import com.example.menglucywhh.myquarter.view.fragment.CenterFragment;
 import com.example.menglucywhh.myquarter.view.fragment.SatinFragment;
 import com.facebook.drawee.view.SimpleDraweeView;

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#EBEBEB"
+    android:id="@+id/remen_linear"
+    tools:context="com.example.menglucywhh.myquarter.view.activity.MyAttentionActivity">
+
+    <RelativeLayout
+        android:id="@+id/remen_title"
+        android:background="#03A9F4"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        >
+
+        <TextView
+            android:paddingTop="17dp"
+            android:id="@+id/fanhui"
+            android:textSize="22sp"
+            android:textColor="#fff"
+            android:text="返回"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:paddingTop="17dp"
+            android:textSize="22sp"
+            android:textColor="#fff"
+            android:text="我的关注"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/remen_guanzhu"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="17dp"
+            android:textSize="22sp"
+            android:textColor="#fff"
+            android:text="热门关注"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:background="#ffffff"
+        android:id="@+id/myattention_recyclerview"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

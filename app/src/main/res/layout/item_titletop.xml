@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/recommend_title"
         android:background="#03A9F4"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
@@ -34,12 +35,13 @@
             android:layout_height="wrap_content" />
 
         <ImageView
-            android:id="@+id/edit"
             android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/edit"
+            android:id="@+id/edit"
             android:layout_width="35dp"
-            android:layout_height="35dp" />
+            android:layout_height="35dp"
+            android:layout_alignBottom="@+id/top_text"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/edit" />
     </RelativeLayout>
 
 </LinearLayout>

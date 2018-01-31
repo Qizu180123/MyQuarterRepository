@@ -69,6 +69,18 @@
                 android:layout_weight="1"
                 android:text="视频" />
 
+            <RadioButton
+                android:drawableTop="@drawable/oddphotos_selector"
+                android:textColor="@drawable/radio_textcolor_selector"
+                android:gravity="center"
+                android:padding="8dp"
+                android:button="@null"
+                android:textSize="21sp"
+                android:id="@+id/radio_oddphotos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="趣图" />
         </RadioGroup>
     </LinearLayout>
 
