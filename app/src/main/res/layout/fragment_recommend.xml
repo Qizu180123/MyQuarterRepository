@@ -51,39 +51,6 @@
             android:layout_height="35dp" />
     </RelativeLayout>
 
-     <!--   <RadioGroup
-            android:id="@+id/radio_group"
-            android:background="#fff"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <RadioButton
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:textColor="@drawable/textcolor"
-                android:checked="true"
-                android:id="@+id/btn_01"
-                android:textSize="21sp"
-                android:button="@null"
-                android:text="热门"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content" />
-
-            <RadioButton
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:textColor="@drawable/textcolor"
-                android:id="@+id/btn_02"
-                android:textSize="21sp"
-                android:button="@null"
-                android:text="关注"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content" />
-        </RadioGroup>-->
    <com.androidkun.xtablayout.XTabLayout
        android:layout_below="@+id/rela"
         android:id="@+id/xTablayout"

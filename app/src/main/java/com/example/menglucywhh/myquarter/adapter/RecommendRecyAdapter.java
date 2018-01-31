@@ -7,22 +7,26 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.menglucywhh.myquarter.MainActivity;
 import com.example.menglucywhh.myquarter.R;
+import com.example.menglucywhh.myquarter.utils.ThemeManager;
 import com.example.menglucywhh.myquarter.view.activity.EditActivity;
+import com.example.menglucywhh.myquarter.view.activity.MainActivity;
 import com.example.menglucywhh.myquarter.view.fragment.CenterFragment;
-import com.example.menglucywhh.myquarter.view.fragment.SatinFragment;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 /**
  * Created by Menglucywhh on 2018/1/22.
  */
 
 public class RecommendRecyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    Context context;
+    static Context context;
     FragmentManager childFragmentManager;
 
     private SlidingMenu menu;
@@ -33,10 +37,12 @@ public class RecommendRecyAdapter extends RecyclerView.Adapter<RecyclerView.View
     private TextView night;
     private TextView myDirectory;
     private TextView settings;
+    private static RelativeLayout recommend_title;
 
     public RecommendRecyAdapter(Context context, FragmentManager childFragmentManager) {
         this.childFragmentManager = childFragmentManager;
         this.context = context;
+        EventBus.getDefault().register(this);
     }
 
     @Override
@@ -62,21 +68,19 @@ public class RecommendRecyAdapter extends RecyclerView.Adapter<RecyclerView.View
            oneViewHolder.touxiang.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {
-                   if(touClickListener!=null) {
-                       touClickListener.click();
-                   }
               //
                    MainActivity.touClick();
                }
            });
 
-           oneViewHolder.edit.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View view) {
-                   context.startActivity(new Intent(context,EditActivity.class));
 
-               }
-           });
+            oneViewHolder.edit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    context.startActivity(new Intent(context,EditActivity.class));
+
+                }
+            });
 
         } else if (holder instanceof IViewHolder) {
             childFragmentManager.beginTransaction().replace(R.id.item_rela, new CenterFragment()).commit();
@@ -97,8 +101,33 @@ public class RecommendRecyAdapter extends RecyclerView.Adapter<RecyclerView.View
         return 2;
     }
 
+
+    public void unregistEventBus(){
+        EventBus.getDefault().unregister(this);
+    }
+
+  @Subscribe(sticky = true)
+  public void eventDayNight(String dayNight){
+        if(dayNight.equals("night")){
+            recommend_title.setBackgroundColor(context.getResources().getColor(ThemeManager.getCurrentThemeRes(context, R.color.backgroundColor)));
+        }else{
+            recommend_title.setBackgroundColor(context.getResources().getColor(ThemeManager.getCurrentThemeRes(context, R.color.radio_select)));
+
+        }
+  }
+
+    public void setTitleNight(){
+      if(recommend_title!=null) {
+          recommend_title.setBackgroundColor(context.getResources().getColor(ThemeManager.getCurrentThemeRes(context, R.color.backgroundColor)));
+      }
+    }
+    public void setTitleDay(){
+        if(recommend_title!=null) {
+            recommend_title.setBackgroundColor(context.getResources().getColor(ThemeManager.getCurrentThemeRes(context, R.color.radio_select)));
+        }
+    }
     //第一个条目
-    public static class OneViewHolder extends RecyclerView.ViewHolder {
+    public class OneViewHolder extends RecyclerView.ViewHolder {
 
         private final SimpleDraweeView touxiang;
         private final TextView top_text;
@@ -109,6 +138,7 @@ public class RecommendRecyAdapter extends RecyclerView.Adapter<RecyclerView.View
             touxiang = itemView.findViewById(R.id.touxiang);
             top_text = itemView.findViewById(R.id.top_text);
             edit = itemView.findViewById(R.id.edit);
+            recommend_title = itemView.findViewById(R.id.recommend_title);
         }
     }
 
@@ -121,12 +151,6 @@ public class RecommendRecyAdapter extends RecyclerView.Adapter<RecyclerView.View
         }
     }
 
-    TouClickListener touClickListener;
-    public void setTouClickListener(TouClickListener touClickListener){
-        this.touClickListener = touClickListener;
-    }
-    //接口回调
-    public interface TouClickListener{
-        public void click();
-    }
+
+
 }

@@ -62,7 +62,7 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.ViewHolder> {
                 .load(list.get(position).getCover())
                 .transform(new GlideCircleTransform(context)).into(holder.image01);
         holder.videoplayer.setUp(list.get(position).getVideoUrl()
-                , JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "嫂子闭眼睛");
+                , JZVideoPlayerStandard.SCREEN_WINDOW_FULLSCREEN, "嫂子闭眼睛");
         Glide.with(context).load(list.get(position).getCover())
                 .into(holder.videoplayer.thumbImageView);
         holder.image_fenxiang.setOnClickListener(new View.OnClickListener() {

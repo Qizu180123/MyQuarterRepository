@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#EBEBEB"
+    android:id="@+id/search_linear"
+    android:layout_height="match_parent"
+    tools:context="com.example.menglucywhh.myquarter.view.activity.SearchFriendsActivity">
+
+    <RelativeLayout
+        android:id="@+id/search_title"
+        android:background="#03A9F4"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        >
+
+        <TextView
+            android:paddingTop="17dp"
+            android:id="@+id/fanhui"
+            android:textSize="22sp"
+            android:textColor="#fff"
+            android:text="返回"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:paddingTop="17dp"
+            android:textSize="22sp"
+            android:textColor="#fff"
+            android:text="搜索好友"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+<LinearLayout
+    android:layout_gravity="center_vertical"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_weight="1"
+    android:layout_height="0dp">
+    <LinearLayout
+        android:id="@+id/search_shuru_linear"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:background="@drawable/text_shape"
+        android:layout_alignParentRight="true"
+        android:layout_width="0dp"
+        android:layout_weight="6"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/hotattention_sousuo"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/sousuo"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <EditText
+            android:id="@+id/searchfriends_shuru"
+            android:background="@null"
+            android:textColor="#BFBFBF"
+            android:textSize="20sp"
+            android:hint="输入ID或者钟友名                          "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/searchfriends_quxiao"
+        android:layout_marginLeft="10dp"
+        android:textSize="23sp"
+        android:text="取消"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/history_rela"
+        android:paddingRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+       >
+        <TextView
+            android:id="@+id/sousuo_history"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="#9f9e9e"
+            android:textSize="19sp"
+            android:text="搜索历史"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/qingkong_history"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textColor="#9f9e9e"
+            android:textSize="19sp"
+            android:text="清空搜索历史"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="#bebdbd"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/top_recy"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"/>
+
+    <RelativeLayout
+        android:paddingRight="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    <TextView
+        android:layout_centerInParent="true"
+        android:textColor="#9f9e9e"
+        android:textSize="20sp"
+        android:text="你可能感兴趣的用户"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/jiazai"
+            android:visibility="gone"
+            android:src="@drawable/jiazaizhong"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+            <TextView
+                android:id="@+id/huanyipi"
+                android:textColor="#03A9F4"
+                android:textSize="18sp"
+                android:text=" 换一批"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/bottom_recy"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"/>
+</LinearLayout>

@@ -9,46 +9,51 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/sliding_top"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3">
-    <LinearLayout
-        android:layout_marginTop="60dp"
-        android:padding="20dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <com.facebook.drawee.view.SimpleDraweeView
-        android:layout_gravity="center_vertical"
-        fresco:roundAsCircle="true"
-        android:id="@+id/my_image_view"
-        fresco:placeholderImage="@drawable/sliding_touxiang"
-        android:layout_width="80dp"
-        android:layout_height="80dp" />
+        android:layout_weight="3"
+        android:background="#eaaef1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/my_image_view"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                fresco:placeholderImage="@drawable/sliding_touxiang"
+                fresco:roundAsCircle="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:text="椰汁奶茶"
+                android:textSize="23sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="70dp"
+                android:src="@drawable/female" />
+        </LinearLayout>
 
         <TextView
-            android:layout_marginLeft="20dp"
-            android:textSize="23sp"
-            android:layout_gravity="center_vertical"
-            android:text="椰汁奶茶"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:layout_marginLeft="70dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/female"
-            android:layout_width="30dp"
-            android:layout_height="30dp" />
-    </LinearLayout>
-        <TextView
+            android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:textSize="19sp"
             android:layout_marginLeft="20dp"
             android:text="编辑个性签名"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="19sp" />
     </LinearLayout>
 
     <LinearLayout

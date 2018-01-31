@@ -1,5 +1,7 @@
-package com.example.menglucywhh.myquarter;
+package com.example.menglucywhh.myquarter.view.activity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -16,6 +18,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.menglucywhh.myquarter.R;
+import com.example.menglucywhh.myquarter.adapter.RecommendRecyAdapter;
 import com.example.menglucywhh.myquarter.utils.ThemeManager;
 import com.example.menglucywhh.myquarter.view.fragment.RecommendFragment;
 import com.example.menglucywhh.myquarter.view.fragment.SmileFragment;
@@ -23,6 +27,8 @@ import com.example.menglucywhh.myquarter.view.fragment.VideoFragment;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.suke.widget.SwitchButton;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,9 +53,10 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
     TextView settings;
     @BindView(R.id.radio_recommend)
     RadioButton radioRecommend;
+    @BindView(R.id.radio_oddphotos)
+    RadioButton radioOddPhotos;
     @BindView(R.id.radio_smile)
     RadioButton radioSmile;
-
     @BindView(R.id.radio_video)
     RadioButton radioVideo;
     @BindView(R.id.radio_group)
@@ -60,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
     SwitchButton switchButton;
     @BindView(R.id.linearlayout)
     LinearLayout linearlayout;
+    @BindView(R.id.sliding_top)
+    LinearLayout slidingtop;
     @BindView(R.id.sliding_linear)
     LinearLayout slidingLinear;
     private static FragmentManager manager;
@@ -67,6 +76,8 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
     //默认日间模式
     private int theme = R.style.AppTheme;
     private ActionBar supportActionBar;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +85,11 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
         setContentView(R.layout.activity_main);
         ThemeManager.registerThemeChangeListener(this);
         supportActionBar = getSupportActionBar();
+
+        sharedPreferences = getSharedPreferences("config", 0);
+        editor = sharedPreferences.edit();
+        editor.clear();//清空存值
+
         //new出SlidingMenu对象
         menu = new SlidingMenu(this);
         //设置侧滑的方向.左侧
@@ -130,9 +146,7 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
         //主页底部radiobutton的drawabletop设置图片大小
         //初始值给的这些图片
         //推荐
-       /* Drawable drawable_recommend_unselected = getResources().getDrawable(R.drawable.recommend_unselected);
-        drawable_recommend_unselected.setBounds(0, 0, 60, 60);//60,60为宽高
-        radioRecommend.setCompoundDrawables(null, drawable_recommend_unselected, null, null);*/
+
         Drawable drawable_recommend_selected = getResources().getDrawable(R.drawable.recommend_selected);
         drawable_recommend_selected.setBounds(0, 0, 60, 60);//60,60为宽高
         radioRecommend.setCompoundDrawables(null, drawable_recommend_selected, null, null);
@@ -145,6 +159,10 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
         Drawable drawable_video_unselected = getResources().getDrawable(R.drawable.video_unselected);
         drawable_video_unselected.setBounds(0, 0, 60, 60);//60,60为宽高
         radioVideo.setCompoundDrawables(null, drawable_video_unselected, null, null);
+        //趣图
+        Drawable drawable_oddphotos_unselect = getResources().getDrawable(R.drawable.oddphotos_unselect);
+        drawable_oddphotos_unselect.setBounds(0, 0, 60, 60);//60,60为宽高
+        radioOddPhotos.setCompoundDrawables(null, drawable_oddphotos_unselect, null, null);
 
         //顶部文字默认显示 推荐
         //topText.setText("推荐");
@@ -165,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
                         Drawable drawable_recommend_selected = getResources().getDrawable(R.drawable.recommend_selected);
                         drawable_recommend_selected.setBounds(0, 0, 60, 60);//60,60为宽高
                         radioRecommend.setCompoundDrawables(null, drawable_recommend_selected, null, null);
-                        //把另外两个的变灰
+                        //把另外3个的变灰
                         Drawable drawable_smile_unselected = getResources().getDrawable(R.drawable.smile_unselected);
                         drawable_smile_unselected.setBounds(0, 0, 60, 60);//60,60为宽高
                         radioSmile.setCompoundDrawables(null, drawable_smile_unselected, null, null);
@@ -174,8 +192,9 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
                         drawable_video_unselected.setBounds(0, 0, 60, 60);//60,60为宽高
                         radioVideo.setCompoundDrawables(null, drawable_video_unselected, null, null);
 
-                        //顶部的文字改变
-                        //topText.setText("推荐");
+                        Drawable drawable_oddphotos_unselect = getResources().getDrawable(R.drawable.oddphotos_unselect);
+                        drawable_oddphotos_unselect.setBounds(0, 0, 60, 60);//60,60为宽高
+                        radioOddPhotos.setCompoundDrawables(null, drawable_oddphotos_unselect, null, null);
                         //事务替换布局
                         transaction.replace(R.id.frag_linear, new RecommendFragment());
 
@@ -184,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
                         Drawable drawable_smile_selected = getResources().getDrawable(R.drawable.smile_selected);
                         drawable_smile_selected.setBounds(0, 0, 60, 60);//60,60为宽高
                         radioSmile.setCompoundDrawables(null, drawable_smile_selected, null, null);
-                        //把另外两个的变灰
+                        //把另外3个的变灰
                         Drawable drawable_recommend_unselected = getResources().getDrawable(R.drawable.recommend_unselected);
                         drawable_recommend_unselected.setBounds(0, 0, 60, 60);//60,60为宽高
                         radioRecommend.setCompoundDrawables(null, drawable_recommend_unselected, null, null);
@@ -192,8 +211,9 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
                         Drawable drawable_video_unselected1 = getResources().getDrawable(R.drawable.video_unselected);
                         drawable_video_unselected1.setBounds(0, 0, 60, 60);//60,60为宽高
                         radioVideo.setCompoundDrawables(null, drawable_video_unselected1, null, null);
-                        //顶部的文字改变
-                        //topText.setText("段子");
+                        Drawable drawable_oddphotos_unselect1 = getResources().getDrawable(R.drawable.oddphotos_unselect);
+                        drawable_oddphotos_unselect1.setBounds(0, 0, 60, 60);//60,60为宽高
+                        radioOddPhotos.setCompoundDrawables(null, drawable_oddphotos_unselect1, null, null);
                         //事务替换布局
                         transaction.replace(R.id.frag_linear, new SmileFragment());
                         break;
@@ -201,15 +221,33 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
                         Drawable drawable_video_selected = getResources().getDrawable(R.drawable.video_selected);
                         drawable_video_selected.setBounds(0, 0, 60, 60);//60,60为宽高
                         radioVideo.setCompoundDrawables(null, drawable_video_selected, null, null);
-                        //把另外两个的变灰
+                        //把另外3个的变灰
                         Drawable drawable_recommend_unselected1 = getResources().getDrawable(R.drawable.recommend_unselected);
                         drawable_recommend_unselected1.setBounds(0, 0, 60, 60);//60,60为宽高
                         radioRecommend.setCompoundDrawables(null, drawable_recommend_unselected1, null, null);
                         Drawable drawable_smile_unselected1 = getResources().getDrawable(R.drawable.smile_unselected);
                         drawable_smile_unselected1.setBounds(0, 0, 60, 60);//60,60为宽高
                         radioSmile.setCompoundDrawables(null, drawable_smile_unselected1, null, null);
-                        //顶部的文字改变
-                        //topText.setText("视频");
+                        Drawable drawable_oddphotos_unselect2 = getResources().getDrawable(R.drawable.oddphotos_unselect);
+                        drawable_oddphotos_unselect2.setBounds(0, 0, 60, 60);//60,60为宽高
+                        radioOddPhotos.setCompoundDrawables(null, drawable_oddphotos_unselect2, null, null);
+                        //事务替换布局
+                        transaction.replace(R.id.frag_linear, new VideoFragment());
+                        break;
+                    case R.id.radio_oddphotos://视频按钮,选中视频,把其他的变灰
+                        Drawable drawable_oddphotos_select = getResources().getDrawable(R.drawable.oddphotos_select);
+                        drawable_oddphotos_select.setBounds(0, 0, 60, 60);//60,60为宽高
+                        radioOddPhotos.setCompoundDrawables(null, drawable_oddphotos_select, null, null);
+                        //把另外3个的变灰
+                        Drawable drawable_recommend_unselected2 = getResources().getDrawable(R.drawable.recommend_unselected);
+                        drawable_recommend_unselected2.setBounds(0, 0, 60, 60);//60,60为宽高
+                        radioRecommend.setCompoundDrawables(null, drawable_recommend_unselected2, null, null);
+                        Drawable drawable_smile_unselected2 = getResources().getDrawable(R.drawable.smile_unselected);
+                        drawable_smile_unselected2.setBounds(0, 0, 60, 60);//60,60为宽高
+                        radioSmile.setCompoundDrawables(null, drawable_smile_unselected2, null, null);
+                        Drawable drawable_video_unselected2 = getResources().getDrawable(R.drawable.video_unselected);
+                        drawable_video_unselected2.setBounds(0, 0, 60, 60);//60,60为宽高
+                        radioVideo.setCompoundDrawables(null, drawable_video_unselected2, null, null);
                         //事务替换布局
                         transaction.replace(R.id.frag_linear, new VideoFragment());
                         break;
@@ -231,6 +269,11 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
 
                     ThemeManager.setThemeMode(ThemeManager.getThemeMode() == ThemeManager.ThemeMode.DAY
                             ? ThemeManager.ThemeMode.NIGHT : ThemeManager.ThemeMode.DAY);
+                    editor.putBoolean("night",true).commit();//夜间 存值为true
+                    EventBus.getDefault().postSticky("night");//发送到推荐适配器里
+                    //侧滑页面头部变黑
+                    slidingtop.setBackgroundColor(getResources().getColor(ThemeManager.getCurrentThemeRes(MainActivity.this, R.color.backgroundColor)));
+
                 } else {
                     //设置夜间模式关闭
                     Drawable drawable_night_colse = getResources().getDrawable(R.drawable.night_colse);
@@ -238,15 +281,66 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
                     night.setCompoundDrawables(drawable_night_colse, null, null, null);
                     ThemeManager.setThemeMode(ThemeManager.getThemeMode() == ThemeManager.ThemeMode.DAY
                             ? ThemeManager.ThemeMode.NIGHT : ThemeManager.ThemeMode.DAY);
+                    editor.putBoolean("night",false).commit();//夜间 存值为false
+                    EventBus.getDefault().postSticky("day");//发送到推荐适配器里
+                    //侧滑页面变回原来的颜色
+                    slidingtop.setBackgroundColor(getResources().getColor(ThemeManager.getCurrentThemeRes(MainActivity.this, R.color.sliding_top)));
+
                 }
 
             }
         });
-        switchButton.setOnClickListener(new View.OnClickListener() {
+
+        //我的作品点击事件
+        myDirectory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onThemeChanged();
+                Intent intent = new Intent(MainActivity.this, DirectoryActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        //设置 的点击事件
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //我的关注 点击事件
+        takecare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MyAttentionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //搜索好友的点击事件
+        friend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SearchFriendsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //我的收藏的点击事件
+        collection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MyCollectionActivity.class);
+                startActivity(intent);
+            }
+        });
+        //消息通知的点击事件
+        messages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MessagesActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -262,6 +356,7 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
     protected void onDestroy() {
         super.onDestroy();
         ThemeManager.unregisterThemeChangeListener(this);
+
     }
 
 
@@ -271,7 +366,9 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
 
     }
 
+
     private void initTheme() {
+
         //侧滑的页面变黑
         slidingLinear.setBackgroundColor(getResources().getColor(ThemeManager.getCurrentThemeRes(MainActivity.this, R.color.backgroundColor)));
 

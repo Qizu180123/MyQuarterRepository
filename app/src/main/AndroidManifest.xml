@@ -28,13 +28,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.activity.DirectoryActivity" />
+        <activity android:name=".view.activity.SettingsActivity" />
+        <activity android:name=".view.activity.MyAttentionActivity" />
+        <activity android:name=".view.activity.HotAttentionActivity" />
+        <activity android:name=".view.activity.SearchFriendsActivity" />
+        <activity android:name=".view.activity.MyCollectionActivity" />
+        <activity android:name=".view.activity.MessagesActivity"></activity>
+
         <activity
             android:name=".view.activity.Hotplay"
             android:screenOrientation="portrait" />
@@ -68,6 +76,7 @@
         <activity android:name=".view.activity.EditTalkActivity" />
         <activity android:name=".view.activity.EditVedioActivity" />
         <activity android:name=".view.activity.PreviewActivity"></activity>
+
     </application>
 
 </manifest>
