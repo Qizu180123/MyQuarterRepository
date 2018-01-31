@@ -21,4 +21,8 @@
     <color name="radio_unselect">#BFBFBF</color>
     <color name="radio_select">#03A9F4</color>
     <color name="sliding_top">#EAAEF1</color>
+
+    <color name="edit_vedio_view">#E0E0E0</color>
+    <color name="edit_vedio_viewview">#9CCC65</color>
+    <color name="edit_vedio_paizhaoview">#A2DEFA</color>
 </resources>

@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\Studio3_WorkSpace\MyQuarter\library\assets"/><source path="E:\Studio3_WorkSpace\MyQuarter\library\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\Studio3_WorkSpace\MyQuarter\library\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="F:\yikezhong\MyQuarterRepository\library\assets"/><source path="F:\yikezhong\MyQuarterRepository\library\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="F:\yikezhong\MyQuarterRepository\library\src\debug\assets"/></dataSet></merger>
