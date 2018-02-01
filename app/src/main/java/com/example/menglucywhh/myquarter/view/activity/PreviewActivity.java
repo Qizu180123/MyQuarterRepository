@@ -1,5 +1,6 @@
 package com.example.menglucywhh.myquarter.view.activity;
 
+import android.content.Intent;
 import android.graphics.drawable.Animatable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,6 +32,8 @@ public class PreviewActivity extends AppCompatActivity {
     RecyclerView previewRecycle;
     @BindView(R.id.preview_bt_next)
     Button previewBtNext;
+    @BindView(R.id.preview_save)
+    TextView previewSave;
     private ArrayList<String> list;
 
     @Override
@@ -41,10 +44,18 @@ public class PreviewActivity extends AppCompatActivity {
 
         setData();
 
+        previewSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PreviewActivity.this,DirectoryActivity.class));
+                finish();
+            }
+        });
+
         previewBtNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(PreviewActivity.this,PreviewShareActivity.class));
             }
         });
 
@@ -73,7 +84,7 @@ public class PreviewActivity extends AppCompatActivity {
     }
 
     private void setData() {
-        list=new ArrayList<>();
+        list = new ArrayList<>();
         list.add("原画");
         list.add("柔光");
         list.add("复古");

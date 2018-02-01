@@ -31,4 +31,8 @@
     <color name="pre_lj_view">#29B6F6</color>
     <color name="pre_recycle_relative">#A2DEFA</color>
     <color name="pre_bt_next">#29B6F6</color>
+    <color name="preshare_bt_bg">#53C2F5</color>
+    <color name="preshare_sharebg">#8CA0EF</color>
+
+
 </resources>
