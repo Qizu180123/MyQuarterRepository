@@ -81,6 +81,9 @@
         <activity android:name=".view.activity.PreviewActivity" />
         <activity android:name=".view.activity.PreviewShareActivity" />
         <activity android:name=".view.activity.TalkShareActivity"></activity>
+        <activity android:name=".view.activity.LoginHomeActivity"></activity>
+        <activity android:name=".view.activity.LoginActivity"></activity>
+        <activity android:name=".view.activity.RegActivity"></activity>
     </application>
     <meta-data
         android:name="UMENG_CHANNEL"
