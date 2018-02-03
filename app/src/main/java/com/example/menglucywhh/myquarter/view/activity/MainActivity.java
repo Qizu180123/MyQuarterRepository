@@ -21,6 +21,7 @@ import android.widget.TextView;
 import com.example.menglucywhh.myquarter.R;
 import com.example.menglucywhh.myquarter.adapter.RecommendRecyAdapter;
 import com.example.menglucywhh.myquarter.utils.ThemeManager;
+import com.example.menglucywhh.myquarter.view.fragment.PictureFragment;
 import com.example.menglucywhh.myquarter.view.fragment.RecommendFragment;
 import com.example.menglucywhh.myquarter.view.fragment.SmileFragment;
 import com.example.menglucywhh.myquarter.view.fragment.VideoFragment;
@@ -113,6 +114,13 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
         Uri uri = Uri.parse("https://imgsa.baidu.com/forum/pic/item/3bc79f3df8dcd1000ac6c4fa798b4710b8122f96.jpg");
         SimpleDraweeView imageTouXiang = (SimpleDraweeView) findViewById(R.id.my_image_view);
         imageTouXiang.setImageURI(uri);
+        imageTouXiang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, LoginHomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //侧滑页面底部我的作品图标
         Drawable drawable_directory = getResources().getDrawable(R.drawable.directory);
@@ -249,7 +257,7 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
                         drawable_video_unselected2.setBounds(0, 0, 60, 60);//60,60为宽高
                         radioVideo.setCompoundDrawables(null, drawable_video_unselected2, null, null);
                         //事务替换布局
-                        transaction.replace(R.id.frag_linear, new VideoFragment());
+                        transaction.replace(R.id.frag_linear, new PictureFragment());
                         break;
                 }
                 //事务提交,否则无效果
