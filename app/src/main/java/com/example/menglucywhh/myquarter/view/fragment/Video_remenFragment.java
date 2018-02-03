@@ -50,8 +50,10 @@ public class Video_remenFragment extends Fragment {
             public void success(List<NeihanVideoBean.DataBeanX.DataBean> list) {
                 adapter = new RemenAdapter(getActivity(),list);
                 if (adapter!=null){
-                    recycleRemen.setAdapter(adapter);
-                    adapter.notifyDataSetChanged();
+                    if (recycleRemen!=null) {
+                        recycleRemen.setAdapter(adapter);
+                        adapter.notifyDataSetChanged();
+                    }
                 }
             }
 

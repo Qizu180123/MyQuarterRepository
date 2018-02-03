@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyQuarter.iml" filepath="$PROJECT_DIR$/MyQuarter.iml" />
       <module fileurl="file://E:\studio-gc\MyQuarterRepository\MyQuarter.iml" filepath="E:\studio-gc\MyQuarterRepository\MyQuarter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MyQuarterRepository.iml" filepath="$PROJECT_DIR$/MyQuarterRepository.iml" />
       <module fileurl="file://E:\Studio3_WorkSpace\MyQuarter\MyQuarterRepository.iml" filepath="E:\Studio3_WorkSpace\MyQuarter\MyQuarterRepository.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
