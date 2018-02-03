@@ -23,7 +23,6 @@ public class Hotplay extends AppCompatActivity {
         setContentView(R.layout.activity_hotplay);
         Intent intent = getIntent();
         String url = intent.getStringExtra("url");
-        Log.i("aaa",url);
         String image = intent.getStringExtra("image");
         jzVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.bofang);
         jzVideoPlayerStandard.setUp(url,jzVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, image);
