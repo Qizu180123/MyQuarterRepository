@@ -57,8 +57,6 @@ public class Video_remenFragment extends Fragment {
 
         });
 
-
-        Log.i("1111111111",view.toString());
         return view;
     }
 
