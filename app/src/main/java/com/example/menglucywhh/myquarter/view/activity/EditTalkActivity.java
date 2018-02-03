@@ -2,6 +2,7 @@ package com.example.menglucywhh.myquarter.view.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
@@ -32,6 +33,8 @@ public class EditTalkActivity extends AppCompatActivity {
     private PopupWindow pw;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor edit;
+    //记录用户首次点击返回键的时间
+    private long firstTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +76,7 @@ public class EditTalkActivity extends AppCompatActivity {
         talk_publish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(EditTalkActivity.this,TalkShareActivity.class));
                 Toast.makeText(EditTalkActivity.this, "发表成功,已分享", Toast.LENGTH_SHORT).show();
             }
         });
@@ -81,12 +84,17 @@ public class EditTalkActivity extends AppCompatActivity {
         talk_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showEditPhotoWindow(view);
+                showEditPhotoWindow();
             }
         });
     }
 
-    private void showEditPhotoWindow(View view) {
+    @Override
+    public void onBackPressed() {
+            showEditPhotoWindow();
+    }
+
+    private void showEditPhotoWindow() {
 
         View contentView = getLayoutInflater().inflate(R.layout.popwindow_layout, null);
         pw = new PopupWindow(contentView, getWindowManager().getDefaultDisplay().getWidth(), getWindowManager().getDefaultDisplay().getHeight(), true);

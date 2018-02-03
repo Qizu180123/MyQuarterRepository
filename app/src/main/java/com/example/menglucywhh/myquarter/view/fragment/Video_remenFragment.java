@@ -30,12 +30,13 @@ import butterknife.Unbinder;
  * Created by fuck on 2018/1/22.
  */
 
-public class Video_remenFragment extends Fragment implements AddView {
+public class Video_remenFragment extends Fragment {
     @BindView(R.id.recycle_remen)
     RecyclerView recycleRemen;
     Unbinder unbinder;
     private RemenAdapter adapter;
     private Presenter presenter;
+
 
     @Nullable
     @Override
@@ -43,17 +44,19 @@ public class Video_remenFragment extends Fragment implements AddView {
         View view = inflater.inflate(R.layout.fragment_remen, container, false);
         unbinder = ButterKnife.bind(this, view);
         presenter = new Presenter();
+        recycleRemen.setLayoutManager(new StaggeredGridLayoutManager(2,  StaggeredGridLayoutManager.VERTICAL));
         presenter.getData(new Presenter.NhPresenterListener() {
             @Override
             public void success(List<NeihanVideoBean.DataBeanX.DataBean> list) {
                 adapter = new RemenAdapter(getActivity(),list);
-
-                StaggeredGridLayoutManager recyclerViewLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-                recycleRemen.setLayoutManager(recyclerViewLayoutManager);
-                recycleRemen.setAdapter(adapter);
+                if (adapter!=null){
+                    recycleRemen.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                }
             }
+
         });
-        Log.i("1111111111",view.toString());
+
         return view;
     }
 
@@ -75,13 +78,4 @@ public class Video_remenFragment extends Fragment implements AddView {
         }
     }
 
-    @Override
-    public void success(shipingBean shipingBean) {
-
-
-    }
-    @Override
-    public void failrue() {
-
-    }
 }

@@ -52,7 +52,6 @@ public class RemenAdapter extends RecyclerView.Adapter<RemenAdapter.IViewHolder>
 
     @Override
     public IViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Toast.makeText(context, "aaa", Toast.LENGTH_LONG).show();
         View view = View.inflate(context, R.layout.remen_item, null);
         return new IViewHolder(view,mOnItemClickListener1);
     }

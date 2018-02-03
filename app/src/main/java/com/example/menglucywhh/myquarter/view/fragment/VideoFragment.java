@@ -1,5 +1,6 @@
 package com.example.menglucywhh.myquarter.view.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.androidkun.xtablayout.XTabLayout;
 import com.example.menglucywhh.myquarter.R;
 import com.example.menglucywhh.myquarter.utils.CustomViewPager;
+import com.example.menglucywhh.myquarter.view.activity.EditActivity;
 import com.example.menglucywhh.myquarter.view.activity.MainActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
@@ -59,6 +61,13 @@ public class VideoFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(),EditActivity.class));
+            }
+        });
         //第一个条目的点击事件
         touxiang.setOnClickListener(new View.OnClickListener() {
             @Override

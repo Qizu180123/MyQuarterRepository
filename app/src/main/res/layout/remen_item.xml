@@ -23,22 +23,24 @@
         android:gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="01:02"/>
+        android:text="01:02"
+        android:id="@+id/textView" />
+
     <ImageView
         android:id="@+id/image01"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginRight="12dp"
-        android:src="@drawable/pinglun"/>
-    <TextView
-        android:textColor="#ffffff"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="32dp"
-        android:gravity="center_horizontal"
+        android:layout_toStartOf="@+id/textView2"
+        android:src="@drawable/pinglun" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="22"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center_horizontal"
+        android:text="22"
+        android:textColor="#ffffff"
+        android:id="@+id/textView2" />
 </RelativeLayout>

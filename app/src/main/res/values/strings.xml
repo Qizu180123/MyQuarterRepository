@@ -19,4 +19,13 @@
     <string name="preview_title">预览</string>
     <string name="preview_lvjing">滤镜</string>
     <string name="preview_btnext">下一步</string>
+    <string name="previewshare_bt_setfm">设置封面</string>
+    <string name="previewshare_bt_fabu">发布</string>
+    <string name="previewshare_edit">点击输入视频简介</string>
+    <string name="talkshare_tv">发表成功,快分享给好友捧场吧~!</string>
+    <string name="talkshare_qqshare">QQ好友</string>
+    <string name="talkshare_kjshare">朋友圈</string>
+    <string name="talkshare_friendshare">朋友圈</string>
+    <string name="talkshare_wxshare">微信</string>
+    <string name="talkshare_tosee">前去看看!!</string>
 </resources>

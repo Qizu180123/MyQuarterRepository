@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.menglucywhh.myquarter.view.activity.TalkShareActivity">
+
+
+    <RelativeLayout
+        android:background="#03A9F4"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <TextView
+            android:id="@+id/talk_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/back"
+            android:textColor="@color/backgroundColor"
+            android:textSize="22sp"/>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp">
+
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:id="@+id/talkyes"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/talkyes"/>
+
+        <TextView
+            android:layout_below="@+id/talkyes"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/talkshare_tv"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/qqshareicon"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/talkshare_qqshare"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="15dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/qqkjshareicon"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/talkshare_kjshare"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/friendshareicon"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/talkshare_friendshare"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/wxshareicon"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/talkshare_wxshare"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_tosee"
+        android:layout_width="580dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/talkshare_tosee"
+        android:text="@string/talkshare_tosee"
+        android:textColor="@color/backgroundColor"
+        android:layout_gravity="center"/>
+
+
+
+
+
+</LinearLayout>

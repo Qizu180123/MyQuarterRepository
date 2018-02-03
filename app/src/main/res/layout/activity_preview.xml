@@ -17,7 +17,7 @@
         android:layout_below="@+id/preview_title"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#E0E0E0"
+        android:background="@color/pre_view_bg"
         android:layout_marginTop="5dp"/>
 
     <RelativeLayout
@@ -25,9 +25,9 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:paddingTop="8dp"
-        android:paddingBottom="8dp"
+        android:paddingBottom="4dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="80dp">
 
         <TextView
             android:id="@+id/preview_back"
@@ -41,13 +41,14 @@
         <TextView
             android:textStyle="bold"
             android:textSize="24sp"
-            android:textColor="#fff"
+            android:textColor="@color/backgroundColor"
             android:layout_centerInParent="true"
             android:text="@string/preview_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
+            android:id="@+id/preview_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -63,7 +64,7 @@
         android:layout_below="@+id/previewgif"
         android:layout_width="match_parent"
         android:layout_height="62dp"
-        android:background="#C3E8FA">
+        android:background="@color/pre_lj_bg">
 
         <TextView
             android:layout_marginLeft="20dp"
@@ -77,7 +78,7 @@
             android:layout_marginLeft="18dp"
             android:layout_width="80dp"
             android:layout_height="10dp"
-            android:background="#29B6F6"
+            android:background="@color/pre_lj_view"
             android:layout_alignParentBottom="true"/>
 
     </RelativeLayout>
@@ -87,7 +88,7 @@
         android:layout_below="@+id/previewljview"
         android:layout_width="match_parent"
         android:layout_height="294dp"
-        android:background="#A2DEFA">
+        android:background="@color/pre_recycle_relative">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/preview_recycle"
@@ -107,7 +108,7 @@
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="72dp"
-        android:background="#29B6F6"
+        android:background="@color/pre_bt_next"
         android:text="@string/preview_btnext"
         android:textColor="@color/backgroundColor"
         android:textSize="22sp"/>

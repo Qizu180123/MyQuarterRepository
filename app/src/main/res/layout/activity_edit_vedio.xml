@@ -16,7 +16,7 @@
         android:layout_below="@+id/vedio_title"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#E0E0E0"
+        android:background="@color/edit_vedio_view"
         android:layout_marginTop="5dp"/>
 
     <RelativeLayout
@@ -24,9 +24,9 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:paddingTop="8dp"
-        android:paddingBottom="8dp"
+        android:paddingBottom="4dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="80dp">
 
         <TextView
             android:id="@+id/talk_back"
@@ -40,7 +40,7 @@
         <TextView
             android:textStyle="bold"
             android:textSize="24sp"
-            android:textColor="#fff"
+            android:textColor="@color/backgroundColor"
             android:layout_centerInParent="true"
             android:text="@string/vedio_title"
             android:layout_width="wrap_content"
@@ -59,7 +59,7 @@
         android:layout_above="@+id/vedio_recycle"
         android:layout_width="400dp"
         android:layout_height="10dp"
-        android:background="#9CCC65" />
+        android:background="@color/edit_vedio_viewview" />
     
     <android.support.v7.widget.RecyclerView
         android:layout_below="@+id/vediogif"
@@ -72,7 +72,7 @@
         android:layout_below="@+id/vedio_recycle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/vedio_viewcolor">
+        android:background="@color/edit_vedio_paizhaoview">
 
         <ImageView
             android:id="@+id/paizhao"

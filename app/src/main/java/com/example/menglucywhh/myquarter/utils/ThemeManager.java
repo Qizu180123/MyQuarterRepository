@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ThemeManager {
-      
+
      // 默认是日间模式  
      private static ThemeMode mThemeMode = ThemeMode.DAY;  
      // 主题模式监听器  

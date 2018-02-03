@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.menglucywhh.myquarter.view.activity.PreviewShareActivity">
+
+    <RelativeLayout
+        android:id="@+id/sharetuview"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:background="@drawable/previewshare">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/previewsharext" />
+            
+            <Button
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/previewshare_bt_setfm"
+                android:textColor="@color/backgroundColor"
+                android:background="@color/preshare_bt_bg"
+                android:textSize="22sp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/previewshare_title"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <TextView
+            android:id="@+id/previewshare_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/back"
+            android:textColor="@color/backgroundColor"
+            android:textSize="22sp"/>
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@color/backgroundColor"
+            android:layout_centerInParent="true"
+            android:text="@string/preview_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/shareview"
+        android:layout_below="@+id/sharetuview"
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:background="@color/preshare_sharebg">
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/shareview"
+        android:layout_above="@+id/previewshare_bt_fabu"
+        android:background="@color/edit_vedio_paizhaoview">
+
+        <EditText
+            android:id="@+id/previewshare_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/previewshare_edit"
+            android:paddingTop="8dp"
+            android:background="@color/edit_vedio_paizhaoview"/>
+        <ImageView
+            android:id="@+id/imagefuhao"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="160dp"
+            android:src="@drawable/presharegf"
+            android:layout_alignParentBottom="true"/>
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/previewshare_bt_fabu"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/pre_bt_next"
+        android:text="@string/previewshare_bt_fabu"
+        android:textColor="@color/backgroundColor"
+        android:textSize="22sp"/>
+
+
+</RelativeLayout>
