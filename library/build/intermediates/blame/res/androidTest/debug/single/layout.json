@@ -2,5 +2,9 @@
     {
         "merged": "E:\\Studio3_WorkSpace\\MyQuarter\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\slidingmenumain.xml",
         "source": "E:\\Studio3_WorkSpace\\MyQuarter\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\slidingmenumain.xml"
+    },
+    {
+        "merged": "E:\\studio-gc\\MyQuarterRepository\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\slidingmenumain.xml",
+        "source": "E:\\studio-gc\\MyQuarterRepository\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\slidingmenumain.xml"
     }
 ]

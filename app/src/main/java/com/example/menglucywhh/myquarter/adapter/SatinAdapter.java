@@ -1,6 +1,7 @@
 package com.example.menglucywhh.myquarter.adapter;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +57,7 @@ public class SatinAdapter extends RecyclerView.Adapter<SatinAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         Glide.with(context)
                 .load(bean.getData().get(position).getUser().getIcon())
                 .transform(new GlideCircleTransform(context)).into(holder.image01);
@@ -64,7 +65,39 @@ public class SatinAdapter extends RecyclerView.Adapter<SatinAdapter.ViewHolder> 
         holder.text02.setText(list.get(position).getCreateTime());
         holder.text03.setText(list.get(position).getContent());
 
+        Drawable drawable_pingbi = context.getResources().getDrawable(R.drawable.pingbi);
+        drawable_pingbi.setBounds(0, 0, 50, 50);//60,60为宽高
+        holder.item_pingbi.setCompoundDrawables(null, drawable_pingbi, null, null);
+        Drawable drawable_jubao = context.getResources().getDrawable(R.drawable.jubao);
+        drawable_jubao.setBounds(0, 0, 50, 50);//60,60为宽高
+        holder.item_jubao.setCompoundDrawables(null, drawable_jubao, null, null);
+        Drawable drawable_fuzhilianjie= context.getResources().getDrawable(R.drawable.fuzhilianjie);
+        drawable_fuzhilianjie.setBounds(0, 0, 50, 50);//60,60为宽高
+        holder.item_fuzhilianjie.setCompoundDrawables(null, drawable_fuzhilianjie, null, null);
+        holder.item_gengduo.setTag(1);
+        //点击更多按钮 出现的三个按钮
+        holder.item_gengduo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int tag = (int) holder.item_gengduo.getTag();
+                if(tag==1){
+                    holder.item_gengduo.setTag(2);
+                    holder.item_gengduo.setImageResource(R.drawable.gengduo_shouqi);
+                    //显示三个按钮
+                    holder.item_pingbi.setVisibility(View.VISIBLE);
+                    holder.item_jubao.setVisibility(View.VISIBLE);
+                    holder.item_fuzhilianjie.setVisibility(View.VISIBLE);
 
+                }else{
+                    holder.item_gengduo.setTag(1);
+                    holder.item_gengduo.setImageResource(R.drawable.gengduo);
+                    //显示三个按钮
+                    holder.item_pingbi.setVisibility(View.INVISIBLE);
+                    holder.item_jubao.setVisibility(View.INVISIBLE);
+                    holder.item_fuzhilianjie.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
 
     }
 
@@ -83,7 +116,14 @@ public class SatinAdapter extends RecyclerView.Adapter<SatinAdapter.ViewHolder> 
         TextView text02;
         @BindView(R.id.text_03)
         TextView text03;
-
+        @BindView(R.id.item_gengduo)
+        ImageView item_gengduo;
+        @BindView(R.id.item_pingbi)
+        TextView item_pingbi;
+        @BindView(R.id.item_jubao)
+        TextView item_jubao;
+        @BindView(R.id.item_fuzhilianjie)
+        TextView item_fuzhilianjie;
         ViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
