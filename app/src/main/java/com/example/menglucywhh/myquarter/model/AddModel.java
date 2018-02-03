@@ -16,7 +16,7 @@ import java.util.Map;
 public class AddModel {
     public void getData(final IModel iModel){
         Map<String, String> map = new HashMap<>();
-//       Page=0&token=44ECB7BF74853A20D62CF8279AB2AEE1&source=android&appVersion=101
+//       Page=0&tokeaan=44ECB7BF74853A20D62CF8279AB2AEE1&source=android&appVersion=101
         map.put("Page","1");
         map.put("type","1");
         map.put("Source","android");
