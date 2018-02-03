@@ -41,8 +41,7 @@
         <activity android:name=".view.activity.HotAttentionActivity" />
         <activity android:name=".view.activity.SearchFriendsActivity" />
         <activity android:name=".view.activity.MyCollectionActivity" />
-        <activity android:name=".view.activity.MessagesActivity"></activity>
-
+        <activity android:name=".view.activity.MessagesActivity" />
         <activity
             android:name=".view.activity.Hotplay"
             android:screenOrientation="portrait" />
@@ -75,8 +74,8 @@
         <activity android:name=".view.activity.EditActivity" />
         <activity android:name=".view.activity.EditTalkActivity" />
         <activity android:name=".view.activity.EditVedioActivity" />
-        <activity android:name=".view.activity.PreviewActivity"></activity>
-
+        <activity android:name=".view.activity.PreviewActivity" />
+        <activity android:name=".view.activity.PreviewShareActivity"></activity>
     </application>
     <meta-data
         android:name="UMENG_CHANNEL"
