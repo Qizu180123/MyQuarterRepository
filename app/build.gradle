@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
+        flavorDimensions "default"
         applicationId "com.example.menglucywhh.myquarter"
         minSdkVersion 19
         targetSdkVersion 26
@@ -15,6 +16,21 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    productFlavors {
+        kuan {}
+        xiaomi {}
+        qh360 {}
+        baidu {}
+        wandoujia {}
+    }
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+    lintOptions{
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
