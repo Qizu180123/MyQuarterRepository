@@ -86,11 +86,9 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
         setContentView(R.layout.activity_main);
         ThemeManager.registerThemeChangeListener(this);
         supportActionBar = getSupportActionBar();
-
         sharedPreferences = getSharedPreferences("config", 0);
         editor = sharedPreferences.edit();
         editor.clear();//清空存值
-
         //new出SlidingMenu对象
         menu = new SlidingMenu(this);
         //设置侧滑的方向.左侧
