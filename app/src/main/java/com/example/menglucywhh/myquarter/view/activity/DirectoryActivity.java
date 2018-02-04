@@ -17,6 +17,7 @@ import com.example.menglucywhh.myquarter.R;
 import com.example.menglucywhh.myquarter.utils.ThemeManager;
 import com.example.menglucywhh.myquarter.view.fragment.AttentionFragment;
 import com.example.menglucywhh.myquarter.view.fragment.HotMenFragment;
+import com.example.menglucywhh.myquarter.view.fragment.LocalDirectoryFragment;
 import com.example.menglucywhh.myquarter.view.fragment.PrivateLetterFragment;
 
 import java.util.ArrayList;
@@ -75,9 +76,9 @@ public class DirectoryActivity extends AppCompatActivity {
             public Fragment getItem(int position) {
                 Fragment fragment = null;
                 if (position == 0) {
-                    fragment = new PrivateLetterFragment();//热门的fragment
+                    fragment = new LocalDirectoryFragment();//热门的fragment
                 } else {
-                    fragment = new PrivateLetterFragment();//关注的fragment
+                    fragment = new LocalDirectoryFragment();//关注的fragment
                 }
                 return fragment;
             }

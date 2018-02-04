@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\quarter\\MyQuarterRepository\\library\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+            "outputFile": "E:\\Studio3_WorkSpace\\MyQuarter\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
             "map": [
                 {
-                    "source": "D:\\quarter\\MyQuarterRepository\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "source": "E:\\Studio3_WorkSpace\\MyQuarter\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "from": {
                         "startLines": "14",
                         "startColumns": "4",
@@ -46,10 +46,10 @@
             ]
         },
         {
-            "outputFile": "D:\\quarter\\MyQuarterRepository\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+            "outputFile": "E:\\Studio3_WorkSpace\\MyQuarter\\library\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "D:\\quarter\\MyQuarterRepository\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "source": "E:\\Studio3_WorkSpace\\MyQuarter\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "from": {
                         "startLines": "14",
                         "startColumns": "4",

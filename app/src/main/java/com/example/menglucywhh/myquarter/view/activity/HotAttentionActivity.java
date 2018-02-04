@@ -20,6 +20,7 @@ import com.example.menglucywhh.myquarter.R;
 import com.example.menglucywhh.myquarter.utils.ThemeManager;
 import com.example.menglucywhh.myquarter.view.fragment.AttentionFragment;
 import com.example.menglucywhh.myquarter.view.fragment.HotMenFragment;
+import com.example.menglucywhh.myquarter.view.fragment.NewsFragment;
 import com.example.menglucywhh.myquarter.view.fragment.PrivateLetterFragment;
 
 import java.util.ArrayList;
@@ -87,22 +88,22 @@ public class HotAttentionActivity extends AppCompatActivity {
 
                 switch (position){
                     case 0:
-                        fragment = new PrivateLetterFragment();//热门的fragment
+                        fragment = new NewsFragment();//热门的fragment
                         break;
                     case 1:
-                        fragment = new PrivateLetterFragment();//热门的fragment
+                        fragment = new NewsFragment();//热门的fragment
                         break;
                     case 2:
-                        fragment = new PrivateLetterFragment();//热门的fragment
+                        fragment = new NewsFragment();//热门的fragment
                         break;
                     case 3:
-                        fragment = new PrivateLetterFragment();//热门的fragment
+                        fragment = new NewsFragment();//热门的fragment
                         break;
                     case 4:
-                        fragment = new PrivateLetterFragment();//热门的fragment
+                        fragment = new NewsFragment();//热门的fragment
                         break;
                     case 5:
-                        fragment = new PrivateLetterFragment();//热门的fragment
+                        fragment = new NewsFragment();//热门的fragment
                         break;
                 }
                 return fragment;

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="6dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/local_one"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            fresco:placeholderImage="@drawable/sliding_touxiang"
+            fresco:roundAsCircle="true" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/local_two"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            fresco:placeholderImage="@drawable/sliding_touxiang"
+            fresco:roundAsCircle="true" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/local_three"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            fresco:placeholderImage="@drawable/sliding_touxiang"
+            fresco:roundAsCircle="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/local_four"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            fresco:placeholderImage="@drawable/sliding_touxiang"
+            fresco:roundAsCircle="true" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/local_five"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            fresco:placeholderImage="@drawable/sliding_touxiang"
+            fresco:roundAsCircle="true" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/local_six"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            fresco:placeholderImage="@drawable/sliding_touxiang"
+            fresco:roundAsCircle="true" />
+    </LinearLayout>
+</LinearLayout>
